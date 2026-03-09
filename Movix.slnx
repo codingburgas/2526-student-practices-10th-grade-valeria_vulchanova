@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="BookingSystam/BookingSystam.vcxproj" Id="b80a01a9-a425-4ff8-af0b-20eab23aed08" />
+  <Project Path="MovixStaticLibrary/MovixStaticLibrary.vcxproj" Id="d0ae2dec-b04d-4f22-88e4-aaf245995ce2" />
+</Solution>
