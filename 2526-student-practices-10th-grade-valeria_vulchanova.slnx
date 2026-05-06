@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Movix/Movix.vcxproj" Id="0b431093-7c72-4fa3-9990-adad5e864d67" />
+</Solution>
