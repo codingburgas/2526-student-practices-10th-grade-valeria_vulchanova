@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="PL\logIn.cpp">
       <Filter>PL</Filter>
     </ClCompile>
-    <ClCompile Include="logIn.cpp">
+    <ClCompile Include="PL\main.cpp">
+      <Filter>PL</Filter>
+    </ClCompile>
+    <ClCompile Include="PL\menu.cpp">
       <Filter>PL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logIn.h">
+    <ClInclude Include="PL\logIn.h">
+      <Filter>PL</Filter>
+    </ClInclude>
+    <ClInclude Include="PL\menu.h">
       <Filter>PL</Filter>
     </ClInclude>
   </ItemGroup>

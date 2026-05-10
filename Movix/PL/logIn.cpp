@@ -1,4 +1,5 @@
 #include "logIn.h"
+#include "menu.h"  
 #include <cmath>
 #include <algorithm>
 
@@ -308,7 +309,10 @@ void RunLoginScreen() {
             }
         }
         if (msgTimer > 0) { msgTimer -= dt; msgAlpha = std::min(1.f, msgTimer / 0.4f); }
-        if (loggedIn) loginAnim = std::min(1.f, loginAnim + dt * 1.8f);
+        if (loggedIn) {
+            loginAnim = std::min(1.f, loginAnim + dt * 1.8f);
+            if (loginAnim >= 1.f) { RunMovieScreen(); return; }  // ← добави
+        }
 
         BeginDrawing();
         ClearBackground(C_BG);
