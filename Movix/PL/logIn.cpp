@@ -311,7 +311,7 @@ void RunLoginScreen() {
         if (msgTimer > 0) { msgTimer -= dt; msgAlpha = std::min(1.f, msgTimer / 0.4f); }
         if (loggedIn) {
             loginAnim = std::min(1.f, loginAnim + dt * 1.8f);
-            if (loginAnim >= 1.f) { RunMovieScreen(); return; }  // ← добави
+            if (loginAnim >= 1.f) { RunMovieScreen(); return; } 
         }
 
         BeginDrawing();

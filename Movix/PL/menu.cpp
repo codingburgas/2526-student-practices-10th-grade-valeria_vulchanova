@@ -83,7 +83,7 @@ static const Movie MOVIES[] = {
 
 static const int MOVIE_COUNT = (int)(sizeof(MOVIES) / sizeof(MOVIES[0]));
 
-// ── Layout constants ─────────────────────────────────────────────
+
 static const float CARD_W = 195.f;
 static const float CARD_H = 275.f;
 static const float CARD_GAP = 22.f;
@@ -93,13 +93,12 @@ static const float GRID_TOP = 95.f;
 static const float DETAIL_X = GRID_X + COLS * (CARD_W + CARD_GAP) + 20.f;
 static const float DETAIL_W = SW - DETAIL_X - 22.f;
 
-// ── Per-card animation state ─────────────────────────────────────
 struct CardAnim {
     float hoverT = 0.f;
     float selectT = 0.f;
 };
 
-// ── Helper: draw star rating ─────────────────────────────────────
+
 static void DrawStars(float x, float y, float rating, float sz, Color col) {
     float stars = rating / 2.f;
     for (int i = 0; i < 5; i++) {
@@ -165,7 +164,7 @@ static void DrawPoster(float x, float y, float w, float h, const Movie& m, float
         { x + w - 44, y + 12 }, 9.f, 1, C_BG);
 }
 
-// ── Helper: wrap text ────────────────────────────────────────────
+
 static std::vector<std::string> WrapText(const std::string& text,
     Font f, float sz, float sp, float maxW)
 {
