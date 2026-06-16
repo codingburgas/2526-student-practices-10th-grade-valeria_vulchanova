@@ -22,10 +22,12 @@
     <ClCompile Include="PL\logIn.cpp" />
     <ClCompile Include="PL\main.cpp" />
     <ClCompile Include="PL\menu.cpp" />
+    <ClCompile Include="seat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PL\logIn.h" />
     <ClInclude Include="PL\menu.h" />
+    <ClInclude Include="seat.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

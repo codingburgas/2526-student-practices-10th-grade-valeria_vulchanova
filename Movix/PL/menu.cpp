@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-
+#include "../seat.h"
 
 static const Movie MOVIES[] = {
     {
@@ -127,7 +127,7 @@ static void DrawStars(float x, float y, float rating, float sz, Color col) {
     }
 }
 
-// ── Helper: draw movie poster art ────────────────────────────────
+
 static void DrawPoster(float x, float y, float w, float h, const Movie& m, float t) {
     DrawRectangleGradientV((int)x, (int)y, (int)w, (int)h, m.posterA, m.posterB);
 
@@ -196,7 +196,7 @@ void RunMovieScreen() {
     float scrollTarget = 0.f;
 
     Button bookBtn;
-    BtnInit(bookBtn, { DETAIL_X, SH - 76.f, DETAIL_W, 52.f }, "BOOK TICKET");
+    BtnInit(bookBtn, { DETAIL_X, SH - 50.f, DETAIL_W, 50.f }, "BOOK TICKET");
 
     float confirmT = 0.f;
 
@@ -238,10 +238,13 @@ void RunMovieScreen() {
             if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
                 selected = i;
         }
+        const Movie& mv = MOVIES[selected];  // <-- добави тук
 
         bool booked = BtnUpdate(bookBtn, dt);
-        if (booked) confirmT = 3.f;
-        if (confirmT > 0.f) confirmT -= dt;
+        if (booked) {
+            bool didBook = RunSeatScreen(mv);
+            (void)didBook; 
+        }        if (confirmT > 0.f) confirmT -= dt;
 
         BeginDrawing();
         ClearBackground(C_BG);
@@ -305,7 +308,7 @@ void RunMovieScreen() {
 
         EndScissorMode();
 
-        const Movie& mv = MOVIES[selected];
+        
 
         float dx = DETAIL_X;
         float dy = GRID_TOP + 10.f;
@@ -377,7 +380,7 @@ void RunMovieScreen() {
                 1.5f, CA(mv.accent, ca));
 
             char conf[80];
-            snprintf(conf, sizeof(conf), "✓ Ticket for \"%s\" has been reserved!", mv.title);
+            snprintf(conf, sizeof(conf), "Ticket for \"%s\" has been reserved!", mv.title);
 
             float cw = MeasureTextEx(fUIBold, conf, 11.f, 1).x;
 

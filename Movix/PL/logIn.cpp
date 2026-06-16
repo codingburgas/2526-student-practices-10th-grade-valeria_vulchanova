@@ -164,7 +164,7 @@ void FieldDraw(const Field& f) {
     DrawRectangleRec(f.rect, C_INPUTBG);
     DrawRectangleLinesEx(f.rect, f.active ? 1.8f : 1.2f, border);
 
-    // floating label
+   
     bool  up = f.active || !f.buf.empty();
     float lsz = up ? 11.f : 15.f;
     float ly = up
@@ -173,7 +173,7 @@ void FieldDraw(const Field& f) {
     Color lc = up ? CA(C_GOLD, 0.9f) : CA(C_GREY, 0.8f);
     DrawTextEx(fUIBold, f.label, { f.rect.x + 2, ly }, lsz, 2, lc);
 
-    // content
+    
     std::string shown = f.isPwd ? std::string(f.buf.size(), '*') : f.buf;
     float tsz = 18.f;
     float ty = f.rect.y + (f.rect.height - tsz) * 0.5f;
@@ -258,7 +258,7 @@ void DrawClapper(float cx, float y, float t) {
     (void)t;
 }
 
-// ── RunLoginScreen ────────────────────────────────────────────────
+
 void RunLoginScreen() {
     float panelW = 460.f, panelH = 530.f;
     float panelX = (SW - panelW) * 0.5f;
@@ -304,7 +304,7 @@ void RunLoginScreen() {
                 loggedIn = true;
             }
             else {
-                msg = "Невалидни данни  ·  опитай admin / 1234";
+                msg = "Fail / 1234";
                 msgCol = C_RED; msgAlpha = 1.f; msgTimer = 3.5f;
             }
         }
@@ -379,9 +379,9 @@ void RunLoginScreen() {
                     CA(C_BG, 0), CA(C_GOLD, fa));
                 DrawRectangleGradientH((int)cx, (int)(SH * 0.5f - 60), 160, 3,
                     CA(C_GOLD, fa), CA(C_BG, 0));
-                DrawTextC(fTitle, "ДОБРЕ ДОШЪЛ", cx, SH * 0.5f - 50, 28, 4, CA(C_GOLD2, fa));
+                DrawTextC(fTitle, "Welcome", cx, SH * 0.5f - 50, 28, 4, CA(C_GOLD2, fa));
                 DrawTextC(fUI, "Movix Cinema Suite", cx, SH * 0.5f + 2, 16, 2, CA(C_WHITE, fa * 0.8f));
-                DrawTextC(fUI, "Влизането е успешно", cx, SH * 0.5f + 28, 12, 1, CA(C_GREY, fa * 0.6f));
+                DrawTextC(fUI, "Successful", cx, SH * 0.5f + 28, 12, 1, CA(C_GREY, fa * 0.6f));
             }
         }
 

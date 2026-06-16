@@ -24,6 +24,9 @@
     <ClCompile Include="PL\menu.cpp">
       <Filter>PL</Filter>
     </ClCompile>
+    <ClCompile Include="seat.cpp">
+      <Filter>BLL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PL\logIn.h">
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="PL\menu.h">
       <Filter>PL</Filter>
+    </ClInclude>
+    <ClInclude Include="seat.h">
+      <Filter>BLL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
