@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <RootNamespace>Movix</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType><UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset><CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType><UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset><WholeProgramOptimization>true</WholeProgramOptimization><CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level2</WarningLevel><SDLCheck>false</SDLCheck><Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks><RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard><ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)raylib\include;$(SolutionDir)raylib\src;$(SolutionDir)raylib\src\external;$(SolutionDir)raylib\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_CRT_SECURE_NO_WARNINGS;PLATFORM_DESKTOP;_GLFW_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link><SubSystem>Console</SubSystem><AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;user32.lib;shell32.lib;comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies><GenerateDebugInformation>true</GenerateDebugInformation></Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level2</WarningLevel><SDLCheck>false</SDLCheck><Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking><IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary><LanguageStandard>stdcpp17</LanguageStandard><ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)raylib\include;$(SolutionDir)raylib\src;$(SolutionDir)raylib\src\external;$(SolutionDir)raylib\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_WARNINGS;PLATFORM_DESKTOP;_GLFW_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link><SubSystem>Console</SubSystem><AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;user32.lib;shell32.lib;comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies><EnableCOMDATFolding>true</EnableCOMDATFolding><OptimizeReferences>true</OptimizeReferences></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!-- Movix C++ sources -->
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ui\win_dialog.cpp" />
+    <ClCompile Include="ui\widgets.cpp" />
+    <ClCompile Include="ui\login_screen.cpp" />
+    <ClCompile Include="ui\movie_screen.cpp" />
+    <ClCompile Include="ui\seat_screen.cpp" />
+    <ClCompile Include="ui\admin_screen.cpp" />
+    <ClCompile Include="ui\profile_screen.cpp" />
+    <ClCompile Include="ui\history_screen.cpp" />
+    <ClCompile Include="bll\session.cpp" />
+    <ClCompile Include="bll\auth_service.cpp" />
+    <ClCompile Include="bll\movie_service.cpp" />
+    <ClCompile Include="bll\booking_service.cpp" />
+    <ClCompile Include="bll\stats_service.cpp" />
+    <ClCompile Include="dal\user_repo.cpp" />
+    <ClCompile Include="dal\movie_repo.cpp" />
+    <ClCompile Include="dal\reservation_repo.cpp" />
+    <ClCompile Include="dal\rating_repo.cpp" />
+    <!-- Raylib C sources -->
+    <ClCompile Include="raylib\src\rcore.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\rshapes.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\rtextures.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\rtext.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\rmodels.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\raudio.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\utils.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+    <ClCompile Include="raylib\src\rglfw.c"><CompileAs>CompileAsC</CompileAs><WarningLevel>TurnOffAllWarnings</WarningLevel></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ui\win_dialog.h" />
+    <ClInclude Include="ui\theme.h" /><ClInclude Include="ui\screens.h" />
+    <ClInclude Include="bll\session.h" /><ClInclude Include="bll\auth_service.h" />
+    <ClInclude Include="bll\movie_service.h" /><ClInclude Include="bll\booking_service.h" />
+    <ClInclude Include="bll\stats_service.h" />
+    <ClInclude Include="dal\types.h" /><ClInclude Include="dal\user_repo.h" />
+    <ClInclude Include="dal\movie_repo.h" /><ClInclude Include="dal\reservation_repo.h" />
+    <ClInclude Include="dal\rating_repo.h" />
+    <ClInclude Include="raylib\include\raylib.h" /><ClInclude Include="raylib\include\raymath.h" />
+  </ItemGroup>
+  <ItemGroup><None Include="README.md" /></ItemGroup>
+  <Target Name="CopyFonts" AfterTargets="Build">
+    <ItemGroup><FontFiles Include="$(SolutionDir)fonts\*.ttf" /></ItemGroup>
+    <Copy SourceFiles="@(FontFiles)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" Condition="'@(FontFiles)'!=''" />
+  </Target>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
